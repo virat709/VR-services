@@ -37,8 +37,44 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "V4 Virtual Services",
+        "url": "https://v4services.in",
+        "logo": "https://v4services.in/v4logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-97140-56759",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "V4Stay",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} ${orbitron.variable} antialiased`}>
         <ThreeBackgroundClient />
         <CursorGlow />
