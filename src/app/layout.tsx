@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import GoldFall from "@/components/GoldFall";
 import ThreeBackgroundClient from "@/components/ThreeBackgroundClient";
+import CursorGlow from "@/components/CursorGlow";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,6 +13,20 @@ const orbitron = Orbitron({ subsets: ["latin"], weight: ["700", "900"], variable
 export const metadata: Metadata = {
   title: "V4 Virtual Services — Marketing, SaaS & Automations",
   description: "V4 Virtual Services delivers SaaS management platforms including V4Stay for hotel automation, restaurant QR ordering, and PG management. Also offering marketing and automation services.",
+  keywords: ["Hospitality Software", "Hotel Automation", "Restaurant QR Menu", "PG Management Software", "SaaS", "V4Stay", "Digital Marketing"],
+  openGraph: {
+    title: "V4 Virtual Services — SaaS & Automations",
+    description: "Cloud-based SaaS platforms for hotels, restaurants, and PGs. Manage your property and orders with zero hardware requirements.",
+    url: "https://v4services.in",
+    siteName: "V4 Virtual Services",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "V4 Virtual Services — SaaS & Automations",
+    description: "Cloud-based SaaS platforms for hotels, restaurants, and PGs.",
+  },
   icons: { icon: "/v4logo.png" },
   metadataBase: new URL("https://v4services.in"),
 };
@@ -26,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${inter.className} ${orbitron.variable} antialiased`}>
         <ThreeBackgroundClient />
+        <CursorGlow />
         <GoldFall />
         <Navbar />
         <SmoothScroll>{children}</SmoothScroll>

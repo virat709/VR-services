@@ -91,3 +91,64 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Glassmorphism & High-End Visual System */
+.glass-panel {
+  background: rgba(10, 10, 24, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-panel-accent {
+  background: rgba(14, 165, 233, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(14, 165, 233, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.04);
+}
+
+.glass-card-hover {
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-8px) scale(1.005);
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 20px 45px rgba(14, 165, 233, 0.08), inset 0 0 15px rgba(255, 255, 255, 0.02);
+}
+
+/* Floating offsets for depth layers */
+.animate-float-delay-1 {
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.animate-float-delay-2 {
+  animation: float 8.5s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-float-delay-3 {
+  animation: float 6.2s ease-in-out infinite;
+  animation-delay: 3.8s;
+}
+
+.gradient-border-glow {
+  position: relative;
+}
+
+.gradient-border-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(251, 191, 36, 0.15), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
