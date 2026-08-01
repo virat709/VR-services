@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/v4logo.png" },
   metadataBase: new URL("https://v4services.in"),
+  verification: {
+    google: "lxAeXKf9BIxlNVTHVEJVnJvpr1Yzn0GJi8tvBr5y2C4",
+  },
 };
 
 export const viewport: Viewport = {
