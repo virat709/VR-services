@@ -1642,6 +1642,11 @@ export default function Home() {
                     WhatsApp: +91 97140 56759
                   </a>
                 </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/106299753/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-sky-400 transition-colors">
+                    LinkedIn
+                  </a>
+                </li>
                 <li className="text-gray-500">Ahmedabad, India</li>
                 <li>
                   <Link href="/blog" className="text-gray-500 hover:text-sky-400 transition-colors">

@@ -74,6 +74,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         },
         "description":
           "SaaS management platform company for hospitality — hotel automation, restaurant QR ordering, and PG management — plus digital marketing and business automation services.",
+        "sameAs": [
+          "https://www.linkedin.com/company/106299753/"
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ahmedabad",
