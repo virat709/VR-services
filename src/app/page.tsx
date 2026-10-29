@@ -117,6 +117,10 @@ const faqs = [
     q: "Can I upgrade my SaaS plan later?",
     a: "Yes, our SaaS platforms scale with your business. You can add more rooms, tables, or properties at any time.",
   },
+  {
+    q: "Do you provide automation services in Ahmedabad and Gujarat?",
+    a: "Yes. V4 Virtual Services is headquartered in Ahmedabad, Gujarat, and provides hotel automation, restaurant QR ordering, and PG management software to businesses across Gujarat and the rest of India — setup is remote and takes under 15 minutes.",
+  },
 ];
 
 export default function Home() {
@@ -306,7 +310,7 @@ export default function Home() {
                 Trusted by hotels & restaurants nationwide
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 font-heading gradient-text">
-                One SaaS Platform for Hotels, Restaurants &amp; PGs — Plus Marketing &amp; Automation.
+                V4 Virtual Services — SaaS, Marketing &amp; Automation in Ahmedabad.
               </h1>
               <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed">
                 V4 Virtual Services delivers powerful SaaS platforms — from{" "}
@@ -396,10 +400,11 @@ export default function Home() {
             <p className="text-gray-400 mt-4 leading-relaxed">
               <strong className="text-white">Who it&apos;s for:</strong> hotel owners, restaurant and café operators,
               PG/co-living managers, and growing businesses in India that want to replace manual front-desk work
-              and spreadsheets. Most properties go from signup to a live QR portal in under 15 minutes.
+              and spreadsheets. We&apos;re headquartered in Ahmedabad, Gujarat, with clients across India.
+              Most properties go from signup to a live QR portal in under 15 minutes.
             </p>
             <p className="text-gray-500 mt-4 text-sm">
-              Last updated: <time dateTime="2026-10-29">October 2026</time> · Based in Ahmedabad, serving customers across India · Try the{" "}
+              Last updated: <time dateTime="2026-10-29">October 2026</time> · Headquartered in Ahmedabad, Gujarat, serving customers across India · Try the{" "}
               <Link href="/#simulator" className="text-sky-400 hover:text-sky-300">live platform demo below</Link>
             </p>
           </div>
@@ -433,7 +438,8 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-heading gradient-text">V4 Virtual Services</h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
               One platform company with three specialized branches, built for hotel owners, restaurant
-              operators, PG managers, and businesses that need digital marketing or workflow automation.
+              operators, PG managers, and businesses that need digital marketing or workflow automation —
+              based in Ahmedabad, Gujarat, serving clients across India.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -1572,15 +1578,30 @@ export default function Home() {
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqs.map((faq) => ({
-                  "@type": "Question",
-                  "name": faq.q,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.a,
+                "@graph": [
+                  {
+                    "@type": "FAQPage",
+                    "mainEntity": faqs.map((faq) => ({
+                      "@type": "Question",
+                      "name": faq.q,
+                      "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.a,
+                      },
+                    })),
                   },
-                })),
+                  {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                      {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://v4stay.com/",
+                      },
+                    ],
+                  },
+                ],
               }),
             }}
           />
@@ -1618,7 +1639,7 @@ export default function Home() {
                 <Logo size={40} />
               </div>
               <p className="text-sm leading-relaxed text-gray-500">
-                V4 Virtual Services — a SaaS management platform company with three branches: Marketing (V4 Services), SaaS (V4Stay), and Automations (V4 Automations). Based in Ahmedabad.
+                V4 Virtual Services — a SaaS management platform company with three branches: Marketing (V4 Services), SaaS (V4Stay), and Automations (V4 Automations). Based in Ahmedabad, Gujarat, serving clients across India.
               </p>
             </div>
             <div>

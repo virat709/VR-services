@@ -19,14 +19,24 @@ const inter = Inter({ subsets: ["latin"] });
 const orbitron = Orbitron({ subsets: ["latin"], weight: ["700", "900"], variable: "--font-heading" });
 
 export const metadata: Metadata = {
-  title: "V4 Virtual Services — Marketing, SaaS & Automations",
+  title: "V4 Virtual Services — Automation & SaaS in Ahmedabad",
   description: SITE_DESCRIPTION,
-  keywords: ["Hospitality Software", "Hotel Automation", "Restaurant QR Menu", "PG Management Software", "SaaS", "V4Stay", "Digital Marketing"],
+  keywords: [
+    "automation services Ahmedabad",
+    "business automation Gujarat",
+    "hotel automation software",
+    "restaurant QR ordering system",
+    "PG management software India",
+    "hospitality SaaS",
+    "V4Stay",
+    "digital marketing Ahmedabad",
+    "V4 Virtual Services",
+  ],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "V4 Virtual Services — Marketing, SaaS & Automations",
+    title: "V4 Virtual Services — Automation & SaaS in Ahmedabad",
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -43,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "V4 Virtual Services — Marketing, SaaS & Automations",
+    title: "V4 Virtual Services — Automation & SaaS in Ahmedabad",
     description: SITE_DESCRIPTION,
     images: [OG_IMAGE],
   },
@@ -64,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": `${SITE_URL}/#organization`,
         "name": SITE_NAME,
         "url": SITE_URL,
@@ -73,15 +83,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "url": ORG_LOGO,
         },
         "description":
-          "SaaS management platform company for hospitality — hotel automation, restaurant QR ordering, and PG management — plus digital marketing and business automation services.",
-        "sameAs": [
-          "https://www.linkedin.com/company/106299753/"
-        ],
+          "V4 Virtual Services provides automation services in Ahmedabad and Gujarat — hotel automation, restaurant QR ordering, and PG management software — plus digital marketing and business automation services.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
           "addressCountry": "IN"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 23.0225,
+          "longitude": 72.5714
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Ahmedabad" },
+          { "@type": "State", "name": "Gujarat" },
+          { "@type": "Country", "name": "India" }
+        ],
+        "knowsAbout": [
+          "Hotel automation",
+          "Restaurant QR ordering",
+          "PG property management software",
+          "Digital marketing",
+          "Business process automation"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/106299753/"
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-97140-56759",
