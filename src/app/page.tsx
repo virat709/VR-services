@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Spline from "@splinetool/react-spline/next";
 import ScrollBackground from "@/components/ScrollBackground";
 import Logo from "@/components/Logo";
@@ -96,6 +97,25 @@ const products = [
       "Automated rent tracking & receipts",
       "Complaints, notices & analytics",
     ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Do you offer all three services together?",
+    a: "Absolutely. Many of our clients use our SaaS products and also hire us for marketing and custom automations to scale their business.",
+  },
+  {
+    q: "How long does a typical automation project take?",
+    a: "It depends on the complexity, but most standard integrations and workflows are deployed within 2 to 4 weeks.",
+  },
+  {
+    q: "Are there long-term contracts for marketing?",
+    a: "We offer flexible month-to-month retainers as well as discounted quarterly and annual contracts.",
+  },
+  {
+    q: "Can I upgrade my SaaS plan later?",
+    a: "Yes, our SaaS platforms scale with your business. You can add more rooms, tables, or properties at any time.",
   },
 ];
 
@@ -286,7 +306,7 @@ export default function Home() {
                 Trusted by hotels & restaurants nationwide
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6 font-heading gradient-text">
-                SaaS Management Platform for Hospitality & More.
+                One SaaS Platform for Hotels, Restaurants &amp; PGs — Plus Marketing &amp; Automation.
               </h1>
               <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed">
                 V4 Virtual Services delivers powerful SaaS platforms — from{" "}
@@ -358,6 +378,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Quick Answer — direct answer + definition + audience for AEO/GEO extraction */}
+      <section aria-label="Quick answer" className="border-b border-night-700/50 bg-night-900/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="glass-panel rounded-2xl p-6 md:p-8 border border-sky-500/10">
+            <p className="text-sky-400 font-semibold text-sm tracking-widest uppercase mb-3">Quick Answer</p>
+            <p className="text-gray-300 leading-relaxed text-lg">
+              <strong className="text-white">V4 Virtual Services</strong> is a SaaS management platform for
+              hotels, restaurants, and paying-guest (PG) properties. In plain terms, it is cloud software that
+              runs your service operations — guest orders, room requests, rent collection, and staff dashboards —
+              from one place, with no hardware to install. It also offers{" "}
+              <Link href="/#services" className="text-sky-400 hover:text-sky-300 font-semibold">marketing services</Link>{" "}
+              and{" "}
+              <Link href="/#pricing" className="text-sky-400 hover:text-sky-300 font-semibold">custom automation</Link>{" "}
+              for businesses that want to grow faster.
+            </p>
+            <p className="text-gray-400 mt-4 leading-relaxed">
+              <strong className="text-white">Who it&apos;s for:</strong> hotel owners, restaurant and café operators,
+              PG/co-living managers, and growing businesses in India that want to replace manual front-desk work
+              and spreadsheets. Most properties go from signup to a live QR portal in under 15 minutes.
+            </p>
+            <p className="text-gray-500 mt-4 text-sm">
+              Last updated: <time dateTime="2026-10-29">October 2026</time> · Based in Ahmedabad, serving customers across India · Try the{" "}
+              <Link href="/#simulator" className="text-sky-400 hover:text-sky-300">live platform demo below</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Highlights bar */}
       <section className="border-y border-night-700/50 bg-night-900/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -384,7 +432,8 @@ export default function Home() {
             <p className="text-sky-400 font-semibold text-sm tracking-widest uppercase mb-3">Three Branches</p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-heading gradient-text">V4 Virtual Services</h2>
             <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-              One platform company with three specialized branches serving diverse business needs.
+              One platform company with three specialized branches, built for hotel owners, restaurant
+              operators, PG managers, and businesses that need digital marketing or workflow automation.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -525,6 +574,18 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+          {/* In practice — original experience signal */}
+          <div className="mt-12 glass-panel rounded-2xl p-6 md:p-8 border border-emerald-500/10">
+            <p className="text-emerald-400 font-semibold text-sm tracking-widest uppercase mb-3">In Practice</p>
+            <p className="text-gray-300 leading-relaxed">
+              Today, <strong className="text-white">7+ hotels and 10+ restaurants run live on V4Stay</strong>.
+              A new property goes from signup to a working QR portal — with menus loaded and dashboards
+              syncing — in under 15 minutes, with no installation visit or hardware purchase. Managers get
+              audio alerts on new orders and room requests, and owners can check occupancy and revenue from
+              their phone. You can try the exact manager and guest flows in the{" "}
+              <Link href="/#simulator" className="text-sky-400 hover:text-sky-300 font-semibold">interactive demo below</Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -750,9 +811,9 @@ export default function Home() {
                       {/* Header greetings */}
                       <div className="flex items-center justify-between">
                         <div>
-                          <h4 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 leading-none">
+                          <h3 className="text-lg font-bold text-white tracking-tight flex items-center gap-2 leading-none">
                             Good evening, My Restaurant 👋
-                          </h4>
+                          </h3>
                           <p className="text-gray-500 text-[11px] mt-1.5 leading-none">Here&apos;s a snapshot of today&apos;s activity.</p>
                         </div>
                         <button className="border border-night-700 hover:border-night-600 text-gray-300 hover:text-white text-[10px] font-semibold px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1">
@@ -852,9 +913,9 @@ export default function Home() {
                     <div className="flex flex-col gap-5 flex-1 animate-fade-in text-gray-300">
                       {/* Header with Title and action links */}
                       <div className="flex items-center justify-between pb-1">
-                        <h4 className="text-lg font-bold text-white tracking-tight leading-none">
+                        <h3 className="text-lg font-bold text-white tracking-tight leading-none">
                           Dashboard Overview
-                        </h4>
+                        </h3>
                         <div className="flex items-center gap-3">
                           <button className="text-[10px] border border-night-700/60 bg-night-900/60 hover:text-white text-gray-300 font-semibold px-3 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5">
                             <span>🔔</span> Enable Notifications
@@ -1017,9 +1078,9 @@ export default function Home() {
                     <div className="flex flex-col gap-5 flex-1 animate-fade-in">
                       {/* Header with Title dashboard overview */}
                       <div className="flex items-center justify-between pb-1">
-                        <h4 className="text-lg font-bold text-white tracking-tight leading-none">
+                        <h3 className="text-lg font-bold text-white tracking-tight leading-none">
                           Dashboard Overview
-                        </h4>
+                        </h3>
                       </div>
 
                       {/* Four Accent Cards exactly like screenshot */}
@@ -1073,7 +1134,7 @@ export default function Home() {
                       {/* Revenue Chart Section */}
                       <div className="bg-night-950/60 border border-night-700/35 rounded-2xl p-5 flex flex-col min-h-[220px] justify-between">
                         <div>
-                          <h5 className="text-xs font-bold text-white tracking-tight">Revenue — Last 6 Months</h5>
+                          <h4 className="text-xs font-bold text-white tracking-tight">Revenue — Last 6 Months</h4>
                           <p className="text-[9px] text-gray-500 mt-1">Monthly rent collection overview</p>
                         </div>
 
@@ -1147,7 +1208,7 @@ export default function Home() {
                       <div>
                         <div className="text-center mb-6">
                           <p className="text-[10px] text-violet-400 font-semibold tracking-wider uppercase">Room 304 Butler</p>
-                          <h5 className="text-sm font-bold text-white mt-1">Concierge Portal</h5>
+                          <h4 className="text-sm font-bold text-white mt-1">Concierge Portal</h4>
                         </div>
 
                         <div className="space-y-3">
@@ -1219,7 +1280,7 @@ export default function Home() {
                         <div>
                           <div className="text-center mb-4">
                             <p className="text-[10px] text-orange-400 font-semibold tracking-wider uppercase">Table 4 Digital Menu</p>
-                            <h5 className="text-sm font-bold text-white mt-1">Taste Restaurant QR</h5>
+                            <h4 className="text-sm font-bold text-white mt-1">Taste Restaurant QR</h4>
                           </div>
 
                           <div className="space-y-2">
@@ -1298,7 +1359,7 @@ export default function Home() {
                       <div>
                         <div className="text-center mb-6">
                           <p className="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">PGmate Portal</p>
-                          <h5 className="text-sm font-bold text-white mt-1">Room 102 Tenant Link</h5>
+                          <h4 className="text-sm font-bold text-white mt-1">Room 102 Tenant Link</h4>
                         </div>
 
                         <div className="bg-night-950/80 border border-night-800 p-4 rounded-2xl">
@@ -1436,6 +1497,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Blog — internal links to supporting posts */}
+      <section id="blog" className="py-20 md:py-28 relative overflow-hidden">
+        <div className="bg-layer absolute inset-0 bg-night-950" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-sky-400 font-semibold text-sm tracking-widest uppercase mb-3">Learn More</p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight font-heading gradient-text">
+              What is a SaaS Management Platform Doing for Hotels &amp; PGs?
+            </h2>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              Short answer: it replaces the front-desk phone, the printed menu, and the rent spreadsheet with
+              one cloud dashboard. Read the guides below to see how each use case works in detail.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                href: "/blog/hotel-automation-2026",
+                title: "How Hotel Automation is Changing the Hospitality Industry in 2026",
+                desc: "Cloud-based property management systems and QR concierge services, explained.",
+              },
+              {
+                href: "/blog/restaurant-qr-ordering",
+                title: "Why Every Restaurant Needs a Cloud-Based QR Code Ordering System",
+                desc: "Faster table turns, higher order value, zero menu printing costs.",
+              },
+              {
+                href: "/blog/pg-property-management",
+                title: "The Ultimate Guide to Streamlining PG and Property Management",
+                desc: "Stop tracking rent in spreadsheets — automate rent, receipts and complaints.",
+              },
+            ].map((post) => (
+              <Link
+                key={post.href}
+                href={post.href}
+                className="glass-panel rounded-2xl p-6 border border-night-700/50 hover:border-sky-500/30 transition-colors flex flex-col group"
+              >
+                <h3 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-sky-300 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{post.desc}</p>
+                <span className="text-sky-400 text-sm font-semibold">
+                  Read the guide
+                  <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/blog" className="text-sky-400 hover:text-sky-300 font-semibold text-sm">
+              View all articles on the V4 blog →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section id="faq" className="py-20 md:py-28 relative overflow-hidden bg-night-900/30 border-y border-night-800">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1443,18 +1560,30 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tight font-heading gradient-text">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-4">
-            {[
-              { q: "Do you offer all three services together?", a: "Absolutely. Many of our clients use our SaaS products and also hire us for marketing and custom automations to scale their business." },
-              { q: "How long does a typical automation project take?", a: "It depends on the complexity, but most standard integrations and workflows are deployed within 2 to 4 weeks." },
-              { q: "Are there long-term contracts for marketing?", a: "We offer flexible month-to-month retainers as well as discounted quarterly and annual contracts." },
-              { q: "Can I upgrade my SaaS plan later?", a: "Yes, our SaaS platforms scale with your business. You can add more rooms, tables, or properties at any time." },
-            ].map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="glass-panel p-6 rounded-xl text-left border border-night-700/50">
                 <h3 className="text-lg font-semibold text-white mb-2">{faq.q}</h3>
                 <p className="text-sm text-gray-400">{faq.a}</p>
               </div>
             ))}
           </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqs.map((faq) => ({
+                  "@type": "Question",
+                  "name": faq.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.a,
+                  },
+                })),
+              }),
+            }}
+          />
         </div>
       </section>
 
@@ -1493,7 +1622,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-sky-400 mb-4 text-sm uppercase tracking-wider">Branches</h4>
+              <h3 className="font-semibold text-sky-400 mb-4 text-sm uppercase tracking-wider">Branches</h3>
               <ul className="space-y-2 text-sm text-gray-500">
                 <li className="hover:text-gray-300 transition-colors cursor-default">V4 Services — Marketing</li>
                 <li className="hover:text-gray-300 transition-colors cursor-default">V4Stay — SaaS</li>
@@ -1501,7 +1630,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-sky-400 mb-4 text-sm uppercase tracking-wider">Contact</h4>
+              <h3 className="font-semibold text-sky-400 mb-4 text-sm uppercase tracking-wider">Contact</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="mailto:v4services.in@gmail.com" className="text-gray-500 hover:text-sky-400 transition-colors">
@@ -1514,6 +1643,11 @@ export default function Home() {
                   </a>
                 </li>
                 <li className="text-gray-500">Ahmedabad, India</li>
+                <li>
+                  <Link href="/blog" className="text-gray-500 hover:text-sky-400 transition-colors">
+                    V4 Blog &amp; Guides
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

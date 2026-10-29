@@ -1,10 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { blogs } from "@/data/blogs";
+import { SITE_URL, SITE_NAME, OG_IMAGE } from "@/lib/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog — V4 Virtual Services",
-  description: "Read the latest insights on hotel automation, restaurant QR ordering, and PG property management.",
+  description: "Guides on hotel automation, restaurant QR ordering, PG property management, marketing and automations from the V4Stay team.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Blog — V4 Virtual Services",
+    description: "Guides on hotel automation, restaurant QR ordering, PG property management, marketing and automations from the V4Stay team.",
+    url: `${SITE_URL}/blog`,
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    type: "website",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "V4 Virtual Services blog" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — V4 Virtual Services",
+    description: "Guides on hotel automation, restaurant QR ordering, PG property management, marketing and automations.",
+    images: [OG_IMAGE],
+  },
 };
 
 export default function BlogIndex() {
@@ -12,7 +32,13 @@ export default function BlogIndex() {
     <div className="min-h-screen pt-32 pb-20 relative">
       <div className="bg-layer absolute inset-0 bg-gradient-to-b from-night-950 via-night-900 to-night-950" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
+        <nav aria-label="Breadcrumb" className="text-sm text-gray-500 mb-8">
+          <Link href="/" className="hover:text-sky-400 transition-colors">Home</Link>
+          <span className="mx-2">/</span>
+          <span className="text-gray-300">Blog</span>
+        </nav>
+
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading gradient-text mb-4">
             Insights & Resources

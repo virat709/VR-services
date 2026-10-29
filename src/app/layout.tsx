@@ -5,6 +5,14 @@ import Navbar from "@/components/Navbar";
 import GoldFall from "@/components/GoldFall";
 import ThreeBackgroundClient from "@/components/ThreeBackgroundClient";
 import CursorGlow from "@/components/CursorGlow";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  ORG_LOGO,
+  OG_IMAGE,
+} from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,23 +20,35 @@ const orbitron = Orbitron({ subsets: ["latin"], weight: ["700", "900"], variable
 
 export const metadata: Metadata = {
   title: "V4 Virtual Services — Marketing, SaaS & Automations",
-  description: "V4 Virtual Services delivers SaaS management platforms including V4Stay for hotel automation, restaurant QR ordering, and PG management. Also offering marketing and automation services.",
+  description: SITE_DESCRIPTION,
   keywords: ["Hospitality Software", "Hotel Automation", "Restaurant QR Menu", "PG Management Software", "SaaS", "V4Stay", "Digital Marketing"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "V4 Virtual Services — SaaS & Automations",
-    description: "Cloud-based SaaS platforms for hotels, restaurants, and PGs. Manage your property and orders with zero hardware requirements.",
-    url: "https://v4services.in",
-    siteName: "V4 Virtual Services",
-    locale: "en_IN",
+    title: "V4 Virtual Services — Marketing, SaaS & Automations",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: SITE_LOCALE,
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "V4 Virtual Services — SaaS dashboards for hotels, restaurants and PGs",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "V4 Virtual Services — SaaS & Automations",
-    description: "Cloud-based SaaS platforms for hotels, restaurants, and PGs.",
+    title: "V4 Virtual Services — Marketing, SaaS & Automations",
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   icons: { icon: "/v4logo.png" },
-  metadataBase: new URL("https://v4services.in"),
+  metadataBase: new URL(SITE_URL),
   verification: {
     google: "lxAeXKf9BIxlNVTHVEJVnJvpr1Yzn0GJi8tvBr5y2C4",
   },
@@ -45,9 +65,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@graph": [
       {
         "@type": "Organization",
-        "name": "V4 Virtual Services",
-        "url": "https://v4services.in",
-        "logo": "https://v4services.in/v4logo.png",
+        "@id": `${SITE_URL}/#organization`,
+        "name": SITE_NAME,
+        "url": SITE_URL,
+        "logo": {
+          "@type": "ImageObject",
+          "url": ORG_LOGO,
+        },
+        "description":
+          "SaaS management platform company for hospitality — hotel automation, restaurant QR ordering, and PG management — plus digital marketing and business automation services.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressCountry": "IN"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-97140-56759",
@@ -57,15 +88,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }
       },
       {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        "url": SITE_URL,
+        "name": SITE_NAME,
+        "description": SITE_DESCRIPTION,
+        "publisher": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en"
+      },
+      {
         "@type": "SoftwareApplication",
         "name": "V4Stay",
         "operatingSystem": "Web",
         "applicationCategory": "BusinessApplication",
+        "description": "Cloud-based SaaS platform for hotel automation, restaurant QR ordering, and PG management. No hardware required.",
+        "featureList": [
+          "Hotel automation with QR room service",
+          "Restaurant QR menu ordering",
+          "PG rent tracking and tenant portal",
+          "Live manager dashboard and analytics"
+        ],
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "INR"
-        }
+        },
+        "publisher": { "@id": `${SITE_URL}/#organization` }
       }
     ]
   };

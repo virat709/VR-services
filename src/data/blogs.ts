@@ -27,11 +27,11 @@ This code instantly opens a customized digital portal for their specific room. F
 
 For the hotel staff, this is a game-changer. When a guest orders a club sandwich via the QR portal, the ticket goes straight to the kitchen display system. The front desk isn't bogged down acting as a middleman. Errors are reduced to near zero, and the speed of service increases drastically. 
 
-Furthermore, hotels using platforms like V4Stay report a significant uptick in room service revenue. When ordering is as easy as a few taps on a screen, guests are more likely to order that late-night dessert or extra beverage.
+Furthermore, hotels using platforms like V4Stay report a significant uptick in room service revenue. When ordering is as easy as a few taps on a screen, guests are more likely to order that late-night dessert or extra beverage. The same QR-first approach lifts restaurants too — see our guide on why every restaurant needs a [cloud-based QR ordering system](/blog/restaurant-qr-ordering).
 
 ### Conclusion
 
-Hotel automation is about empowering your staff and delighting your guests. By adopting modern, cloud-based tools, hoteliers can step away from manual administrative tasks and focus on what truly matters: providing unforgettable hospitality.
+Hotel automation is about empowering your staff and delighting your guests. By adopting modern, cloud-based tools, hoteliers can step away from manual administrative tasks and focus on what truly matters: providing unforgettable hospitality. You can explore the live platform at [hotel.v4stay.com](https://hotel.v4stay.com) or read how [hotel automation](/blog/hotel-automation-2026) pairs with restaurant and PG management in one SaaS suite.
     `
   },
   {
@@ -47,7 +47,7 @@ If you run a restaurant, you know that the two biggest challenges are staffing a
 
 ### What is a Cloud-Based QR Ordering System?
 
-Unlike a static PDF menu that a guest has to pinch and zoom to read, a true cloud-based QR system is interactive. Every table in your restaurant has a unique QR code. When scanned, it opens a beautiful, categorised menu directly in the guest's phone browser—no app download required. 
+Unlike a static PDF menu that a guest has to pinch and zoom to read, a true cloud-based QR system is interactive. Every table in your restaurant has a unique QR code. When scanned, it opens a beautiful, categorised menu directly in the guest's phone browser—no app download required. In short: it is contactless ordering software built on a QR menu, managed entirely from a cloud dashboard.
 
 Guests can add items to their cart, customize their orders (e.g., "No onions, extra spicy"), and send the order directly to the kitchen.
 
@@ -64,7 +64,7 @@ Menu prices fluctuate based on ingredient costs. Reprinting physical menus every
 
 ### The Bottom Line
 
-A QR ordering system doesn't replace your servers; it gives them superpowers. By offloading the mechanical task of order-taking to the software, your staff can focus on delivering exceptional hospitality, refilling drinks, and creating a welcoming atmosphere.
+A QR ordering system doesn't replace your servers; it gives them superpowers. By offloading the mechanical task of order-taking to the software, your staff can focus on delivering exceptional hospitality, refilling drinks, and creating a welcoming atmosphere. You can explore Taste live at [taste.v4stay.com](https://taste.v4stay.com), and if you run a hotel too, see how [hotel automation](/blog/hotel-automation-2026) works in 2026.
     `
   },
   {
@@ -99,7 +99,7 @@ When a tenant reports a broken fan, it goes into a centralized ticketing system.
 
 ### Scaling Your Business
 
-The biggest advantage of using a management system is scalability. When the operational chaos is handled by software, a single manager can oversee 5 properties instead of just 1. By adopting platforms like PGmate, you aren't just buying software; you are buying the infrastructure to grow your real estate empire.
+The biggest advantage of using a management system is scalability. When the operational chaos is handled by software, a single manager can oversee 5 properties instead of just 1. By adopting platforms like PGmate, you aren't just buying software; you are buying the infrastructure to grow your real estate empire. Explore the product at [pg.v4stay.com](https://pg.v4stay.com), and check how the same QR-first philosophy powers [restaurant ordering](/blog/restaurant-qr-ordering) and [hotel automation](/blog/hotel-automation-2026).
     `
   }
 ];
