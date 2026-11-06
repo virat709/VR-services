@@ -48,7 +48,7 @@ const services = [
 const highlights = [
   { stat: "7+", label: "Hotels on V4Stay" },
   { stat: "10+", label: "Restaurants Live" },
-  { stat: "3", label: "Product Lines" },
+  { stat: "4", label: "Product Lines" },
   { stat: "99.9%", label: "Uptime" },
 ];
 
@@ -69,9 +69,9 @@ const products = [
     ],
   },
   {
-    brand: "Taste",
+    brand: "DinePulse",
     subtitle: "Restaurant QR Ordering",
-    title: "Taste by V4Stay — Restaurant QR",
+    title: "DinePulse by V4Stay — Restaurant QR",
     url: "https://taste.v4stay.com",
     tag: "Live",
     desc: "Let guests scan a QR code and place orders from their phones. Upload your menu and manage tables in our portal. The system auto-generates QR codes per table.",
@@ -84,9 +84,9 @@ const products = [
     ],
   },
   {
-    brand: "PGmate",
+    brand: "PG Seva",
     subtitle: "PG & Property Management",
-    title: "PGmate — PG & Property Management",
+    title: "PG Seva — PG & Property Management",
     url: "https://pg.v4stay.com",
     tag: "Live",
     desc: "Scale your PG business with automated rent tracking, digital receipts, a premium tenant portal, and complaint management. Ditch spreadsheets for a unified dashboard.",
@@ -96,6 +96,21 @@ const products = [
       "Tenant portal with magic link access",
       "Automated rent tracking & receipts",
       "Complaints, notices & analytics",
+    ],
+  },
+  {
+    brand: "Loyal Kard",
+    subtitle: "Digital Stamp & Loyalty Cards",
+    title: "Loyal Kard by V4Stay — Digital Loyalty",
+    url: "https://stamp.v4stay.com",
+    tag: "Live",
+    desc: "Digital stamp cards for cafes, restaurants and retail. No paper, no downloads — one scan at the counter and every visit turns into a stamp. Fraud-proof verification and insights/export for win-back campaigns.",
+    image: "/images/service_saas.png",
+    features: [
+      "Join in one scan (no app download)",
+      "Fraud-proof stamp verification",
+      "Reward unlock & QR redeem",
+      "Visit, redemption & churn analytics",
     ],
   },
 ];
@@ -127,7 +142,7 @@ export default function Home() {
   const container = useRef<HTMLDivElement>(null);
 
   // SaaS Simulator States
-  const [simTab, setSimTab] = useState<"hotel" | "restaurant" | "pg">("restaurant");
+  const [simTab, setSimTab] = useState<"hotel" | "restaurant" | "pg" | "loyal">("restaurant");
   
   // Custom Web Audio API synthesizer for premium chime alerts
   const triggerAudioAlert = (freq = 600) => {
@@ -360,7 +375,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-[10px] text-gray-500 font-semibold uppercase leading-none">Taste QR ordering</p>
+                  <p className="text-[10px] text-gray-500 font-semibold uppercase leading-none">DinePulse QR ordering</p>
                   <p className="text-xs text-white font-bold mt-1">Table 8: +₹1,480</p>
                 </div>
               </div>
@@ -483,7 +498,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((p, i) => {
               const themes = [
                 {
@@ -524,6 +539,19 @@ export default function Home() {
                   btn: "bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 shadow-emerald-500/30",
                   border: "hover:border-emerald-400/40",
                   visitLabel: "Visit pg.v4stay.com →",
+                },
+                {
+                  // stamp.v4stay.com — Rose/Pink
+                  glow: "bg-rose-500/20",
+                  ring: "ring-rose-500/40",
+                  shadow: "shadow-rose-500/20",
+                  title: "text-rose-300",
+                  badge: "bg-rose-500/10 text-rose-400 border-rose-500/20",
+                  dot: "bg-rose-400",
+                  icon: "text-rose-400",
+                  btn: "bg-gradient-to-r from-rose-500 to-pink-400 hover:from-rose-400 hover:to-pink-300 shadow-rose-500/30",
+                  border: "hover:border-rose-400/40",
+                  visitLabel: "Visit stamp.v4stay.com →",
                 },
               ][i];
               return (
@@ -631,7 +659,7 @@ export default function Home() {
               }`}
             >
               <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-              Taste Restaurant QR Menu
+              DinePulse Restaurant QR Menu
             </button>
             <button
               onClick={() => { setSimTab("pg"); triggerAudioAlert(680); }}
@@ -642,7 +670,18 @@ export default function Home() {
               }`}
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              PGmate Tenant Portal
+              PG Seva Tenant Portal
+            </button>
+            <button
+              onClick={() => { setSimTab("loyal"); triggerAudioAlert(720); }}
+              className={`px-6 py-2.5 rounded-full font-semibold transition-all border text-sm flex items-center gap-2 cursor-pointer ${
+                simTab === "loyal"
+                  ? "bg-rose-500 border-rose-400 text-white shadow-lg shadow-rose-500/25"
+                  : "border-night-700/50 bg-night-800/40 text-gray-400 hover:text-gray-200 hover:border-night-600"
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
+              Loyal Kard Stamp Cards
             </button>
           </div>
 
@@ -657,7 +696,7 @@ export default function Home() {
                   <div className="w-3 h-3 rounded-full bg-green-500/70" />
                 </div>
                 <div className="bg-night-900/60 text-[10px] text-gray-500 px-4 py-1 rounded-md border border-night-700/30 font-mono select-none">
-                  {simTab === "restaurant" ? "taste.v4stay.com/dashboard" : simTab === "hotel" ? "hotel.v4stay.com/dashboard" : "pg.v4stay.com/dashboard"}
+                  {simTab === "restaurant" ? "dinepulse.v4stay.com/dashboard" : simTab === "hotel" ? "hotel.v4stay.com/dashboard" : simTab === "pg" ? "pg.v4stay.com/dashboard" : "stamp.v4stay.com/dashboard"}
                 </div>
                 <div className="flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded-full">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping shrink-0" />
@@ -682,7 +721,7 @@ export default function Home() {
                       <div className="flex items-center justify-between border-b border-night-700/50 pb-3">
                         <div className="flex items-center gap-1.5">
                           <Logo size={18} />
-                          <span className="text-white font-black text-xs">PGmate</span>
+                          <span className="text-white font-black text-xs">PG Seva</span>
                         </div>
                         <div className="flex gap-2 text-[10px] text-gray-400">
                           <span className="cursor-pointer hover:text-white">☀️</span>
@@ -763,6 +802,36 @@ export default function Home() {
                         🚪 Sign Out
                       </button>
                     </div>
+                  ) : simTab === "loyal" ? (
+                    // Loyal Kard Sidebar
+                    <div className="flex flex-col gap-5">
+                      <div className="flex items-center gap-2 px-2">
+                        <div className="rounded-lg p-1 bg-night-900 border border-night-700/30">
+                          <Logo size={24} />
+                        </div>
+                        <span className="text-white font-bold text-sm tracking-tight">Loyal Kard</span>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[9px] text-gray-600 font-semibold px-2 uppercase tracking-wider mb-2">
+                          Ember & Oak Cafe
+                        </div>
+                        <button className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center gap-2 cursor-pointer">
+                          <span>📊</span> Dashboard
+                        </button>
+                        <button className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 cursor-pointer">
+                          <span>💳</span> Stamp Cards
+                        </button>
+                        <button className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 cursor-pointer">
+                          <span>🎁</span> Rewards
+                        </button>
+                        <button className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 cursor-pointer">
+                          <span>📈</span> Analytics
+                        </button>
+                        <button className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-gray-500 hover:text-gray-300 transition-colors flex items-center gap-2 cursor-pointer">
+                          <span>⚙️</span> Settings
+                        </button>
+                      </div>
+                    </div>
                   ) : (
                     // Taste Sidebar
                     <div className="flex flex-col gap-5">
@@ -770,7 +839,7 @@ export default function Home() {
                         <div className="rounded-lg p-1 bg-night-900 border border-night-700/30">
                           <Logo size={24} />
                         </div>
-                        <span className="text-white font-bold text-sm tracking-tight">Taste</span>
+                        <span className="text-white font-bold text-sm tracking-tight">DinePulse</span>
                       </div>
                       <div className="space-y-1">
                         <div className="text-[9px] text-gray-600 font-semibold px-2 uppercase tracking-wider mb-2">
@@ -1186,6 +1255,59 @@ export default function Home() {
                       </div>
                     </div>
                   )}
+
+                  {simTab === "loyal" && (
+                    <div className="flex flex-col gap-5 flex-1 animate-fade-in">
+                      <div className="flex items-center justify-between pb-1">
+                        <h3 className="text-lg font-bold text-white tracking-tight leading-none">
+                          Loyal Kard Dashboard
+                        </h3>
+                      </div>
+                      <div className="grid grid-cols-4 gap-4">
+                        <div className="bg-night-950/40 border border-night-700/30 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+                          <span className="text-xl">💳</span>
+                          <p className="text-xl font-black text-white mt-2 leading-none">248</p>
+                          <p className="text-[9px] text-gray-500 mt-2 font-bold uppercase tracking-wider leading-none">Active Cards</p>
+                        </div>
+                        <div className="bg-night-950/40 border border-night-700/30 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+                          <span className="text-xl">⭐</span>
+                          <p className="text-xl font-black text-rose-400 mt-2 leading-none">1,920</p>
+                          <p className="text-[9px] text-gray-500 mt-2 font-bold uppercase tracking-wider leading-none">Stamps Issued</p>
+                        </div>
+                        <div className="bg-night-950/40 border border-night-700/30 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+                          <span className="text-xl">🎁</span>
+                          <p className="text-xl font-black text-rose-400 mt-2 leading-none">36</p>
+                          <p className="text-[9px] text-gray-500 mt-2 font-bold uppercase tracking-wider leading-none">Rewards Redeemed</p>
+                        </div>
+                        <div className="bg-night-950/40 border border-rose-500/30 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+                          <span className="text-xl">🔁</span>
+                          <p className="text-xl font-black text-rose-400 mt-2 leading-none">68%</p>
+                          <p className="text-[9px] text-gray-500 mt-2 font-bold uppercase tracking-wider leading-none">Repeat Rate</p>
+                        </div>
+                      </div>
+                      <div className="flex-1 bg-night-950/60 border border-night-700/35 rounded-2xl p-5 flex flex-col min-h-[220px]">
+                        <div className="flex items-center justify-between border-b border-night-800 pb-3 mb-4 shrink-0">
+                          <span className="text-xs font-bold uppercase tracking-wider text-gray-400">Recent Stamp Activity</span>
+                        </div>
+                        <div className="flex-1 overflow-y-auto space-y-3">
+                          <div className="p-3.5 bg-night-900/40 border border-night-800 rounded-xl flex items-center justify-between">
+                            <div>
+                              <p className="text-xs font-black text-white">Priya Sharma</p>
+                              <p className="text-[10px] text-gray-500">Ember & Oak Cafe</p>
+                            </div>
+                            <span className="text-[10px] text-rose-400 font-bold bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">+1 Stamp</span>
+                          </div>
+                          <div className="p-3.5 bg-night-900/40 border border-night-800 rounded-xl flex items-center justify-between">
+                            <div>
+                              <p className="text-xs font-black text-white">Arjun Mehta</p>
+                              <p className="text-[10px] text-gray-500">Reward Redeemed</p>
+                            </div>
+                            <span className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">✓ Free Coffee</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1404,6 +1526,38 @@ export default function Home() {
                       </div>
                     </div>
                   )}
+
+                  {simTab === "loyal" && (
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <div className="text-center mb-6">
+                          <p className="text-[10px] text-rose-400 font-semibold tracking-wider uppercase">Loyal Kard</p>
+                          <h4 className="text-sm font-bold text-white mt-1">Ember & Oak Cafe</h4>
+                        </div>
+
+                        <div className="bg-night-950/80 border border-night-800 p-4 rounded-2xl">
+                          <div className="flex justify-between items-center text-xs pb-3 border-b border-night-800">
+                            <span className="text-gray-500">Customer</span>
+                            <span className="text-white font-semibold">Priya Sharma</span>
+                          </div>
+                          <div className="flex justify-between items-center text-xs py-3 border-b border-night-800">
+                            <span className="text-gray-500">Stamps Collected</span>
+                            <span className="text-white font-semibold">7 / 10</span>
+                          </div>
+                          <div className="flex justify-between items-center text-xs pt-3">
+                            <span className="text-gray-500">Reward</span>
+                            <span className="text-rose-400 font-bold">Free Coffee</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-6">
+                        <button className="w-full py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-bold text-xs transition-all shadow-lg shadow-rose-500/25 cursor-pointer">
+                          Scan to Add Stamp
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -1465,7 +1619,7 @@ export default function Home() {
               { 
                 plan: "SaaS Products", 
                 price: "Subscription", 
-                desc: "V4Stay, Taste, and PGmate licenses.", 
+                desc: "V4Stay, DinePulse, and PG Seva licenses.", 
                 features: ["Cloud-based Dashboard", "Unlimited QR Scans", "Free Setup & Onboarding", "24/7 Technical Support"],
                 color: "text-emerald-400", bg: "bg-emerald-500", border: "border-emerald-500/30",
                 popular: true
